@@ -96,6 +96,9 @@
       <!-- <div class="app-header-icon-item" v-tooltip content="系统布局配置" theme="white" @click="showSettingModal">
         <i class="icon-content-left"></i>
       </div> -->
+      <div class="app-header-icon-item">
+        <a href="/admin">返回后台首页</a>
+      </div>
       <DropdownMenu
         className="app-header-dropdown"
         trigger="hover"
@@ -118,7 +121,6 @@ export default {
     return {
       searchText: '',
       infoMenu: [
-        { key: 'AdministratorPassword', title: '修改密码', icon: 'h-icon-user' },
         { key: 'logout', title: '退出登录', icon: 'h-icon-outbox' }
       ]
     };
@@ -160,8 +162,6 @@ export default {
       if (data == 'logout') {
         Utils.removeLocal('token');
         this.$router.replace({ name: 'Login' });
-      } else {
-        this.$router.push({ name: 'AdministratorPassword' });
       }
     },
     showSettingModal() {
