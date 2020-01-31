@@ -91,25 +91,10 @@
 
 <template>
   <div class="app-header">
-    <!-- <div style="width:50px;float:left;"><Button :icon="siderCollapsed ? 'icon-align-right':'icon-align-left'" size="l" noBorder class="font20" @click="siderCollapsed=!siderCollapsed"></Button></div> -->
     <div class="float-right app-header-info">
-      <!-- <div class="app-header-icon-item" v-tooltip content="系统布局配置" theme="white" @click="showSettingModal">
-        <i class="icon-content-left"></i>
-      </div> -->
       <div class="app-header-icon-item">
         <a href="/admin">返回后台首页</a>
       </div>
-      <DropdownMenu
-        className="app-header-dropdown"
-        trigger="hover"
-        offset="0,5"
-        :width="150"
-        placement="bottom-end"
-        :datas="infoMenu"
-        @onclick="trigger"
-      >
-        <span>{{ User.name }}</span>
-      </DropdownMenu>
     </div>
   </div>
 </template>
@@ -118,12 +103,7 @@ import { mapState } from 'vuex';
 
 export default {
   data() {
-    return {
-      searchText: '',
-      infoMenu: [
-        { key: 'logout', title: '退出登录', icon: 'h-icon-outbox' }
-      ]
-    };
+    return {};
   },
   computed: {
     ...mapState(['User']),
@@ -157,15 +137,6 @@ export default {
         window.removeEventListener('resize', resizeEvent);
       });
       window.dispatchEvent(new Event('resize'));
-    },
-    trigger(data) {
-      if (data == 'logout') {
-        Utils.removeLocal('token');
-        this.$router.replace({ name: 'Login' });
-      }
-    },
-    showSettingModal() {
-      this.$emit('openSetting');
     }
   }
 };

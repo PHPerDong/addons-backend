@@ -63,17 +63,7 @@ export default {
     });
   },
   methods: {
-    init() {
-      R.User.info().then(resp => {
-        if (resp.ok) {
-          let info = resp.data;
-          info.avatar = require('../../images/avatar.png');
-          G.set('account', info);
-          store.dispatch('updateAccount', info);
-          this.initMenu();
-        }
-      });
-    },
+    init() {},
     updateLayoutConfig({ key, value }) {
       this.layoutConfig[key] = value;
     },

@@ -7,10 +7,6 @@ Vue.use(VueRouter);
 const initRouter = () => {
     const routerParam = {
         routes: [{
-            path: '/login',
-            name: 'Login',
-            component: (resolve) => require(['components/login/index'], resolve)
-        }, {
             path: '/',
             component: (resolve) => require(['components/app/app-frame'], resolve),
             children: [{

@@ -24,11 +24,6 @@ const Request = {
             return Ajax.get('/user');
         }
     },
-    Login: {
-        login(param) {
-            return Ajax.postJson('/login', param);
-        }
-    },
     Setting: {
         Get() {
             return Ajax.get('/setting');
@@ -37,7 +32,6 @@ const Request = {
             return Ajax.postJson('/setting', param);
         }
     },
-
     VideoUpload: {
         AliyunAuthTokenRefresh(param) {
             return Ajax.postJson('/video/token/aliyun/refresh', param);
