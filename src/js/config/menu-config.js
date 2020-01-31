@@ -5,7 +5,8 @@ const fullMenus = [{
 }, ];
 
 const getMenus = function(menuIdList = []) {
-    return getAuthMenu(fullMenus, menuIdList);
+    return fullMenus;
+    // return getAuthMenu(fullMenus, menuIdList);
 };
 
 let getAuthMenu = (menus, menuIdList) => {
